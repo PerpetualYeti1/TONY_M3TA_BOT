@@ -2144,3 +2144,21 @@ dp.add_handler(CommandHandler("sell", sell))
 from handlers import widget
 
 dp.add_handler(CommandHandler("widget", widget))
+from telegram.ext import Updater
+from bot_handlers import start, wallet_add, wallet_tokens, snipe
+from telegram.ext import CommandHandler
+
+BOT_TOKEN = "7709151940:AAFkQ2z8sgxwdlAhmGDk8G1lJ6KjKDZFBrw"
+
+updater = Updater(BOT_TOKEN, use_context=True)
+dp = updater.dispatcher
+
+# Register command handlers
+dp.add_handler(CommandHandler("start", start))
+dp.add_handler(CommandHandler("wallet", wallet_tokens))
+dp.add_handler(CommandHandler("wallet_add", wallet_add))
+dp.add_handler(CommandHandler("snipe", snipe))
+
+# Start bot
+updater.start_polling()
+updater.idle()
