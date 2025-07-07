@@ -2137,3 +2137,7 @@ dp.add_handler(MessageHandler(Filters.text & ~Filters.command, message_handler))
 print("🤖 Bot is starting...")
 updater.start_polling()
 updater.idle()
+from handlers import buy, sell
+
+dp.add_handler(CommandHandler("buy", buy))
+dp.add_handler(CommandHandler("sell", sell))
