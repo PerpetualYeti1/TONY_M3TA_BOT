@@ -215,3 +215,10 @@ def sell(update, context):
         update.message.reply_text(f"🔻 Sold {amount} {token} successfully.")
     except:
         update.message.reply_text("❌ Usage: /sell TOKEN AMOUNT\nExample: /sell SOL 1")
+        def widget(update, context):
+    try:
+        token = context.args[0].upper()
+        # Implement your widget logic here
+        update.message.reply_text(f"📊 Trading widget for {token} is now active.")
+    except:
+        update.message.reply_text("❌ Usage: /widget TOKEN\nExample: /widget SOL")
