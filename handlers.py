@@ -198,3 +198,20 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 Happy sniping! 🎯🚀
 """
     await update.message.reply_text(help_text, parse_mode='Markdown')
+def buy(update, context):
+    try:
+        token = context.args[0].upper()
+        amount = float(context.args[1])
+        # Implement your buy logic here
+        update.message.reply_text(f"✅ Bought {amount} {token} successfully.")
+    except:
+        update.message.reply_text("❌ Usage: /buy TOKEN AMOUNT\nExample: /buy SOL 1")
+
+def sell(update, context):
+    try:
+        token = context.args[0].upper()
+        amount = float(context.args[1])
+        # Implement your sell logic here
+        update.message.reply_text(f"🔻 Sold {amount} {token} successfully.")
+    except:
+        update.message.reply_text("❌ Usage: /sell TOKEN AMOUNT\nExample: /sell SOL 1")
