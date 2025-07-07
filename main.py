@@ -2141,3 +2141,6 @@ from handlers import buy, sell
 
 dp.add_handler(CommandHandler("buy", buy))
 dp.add_handler(CommandHandler("sell", sell))
+from handlers import widget
+
+dp.add_handler(CommandHandler("widget", widget))
